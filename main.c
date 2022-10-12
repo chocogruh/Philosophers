@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 12:35:14 by mthiesso          #+#    #+#             */
-/*   Updated: 2021/11/05 18:23:05 by mthiesso         ###   ########.fr       */
+/*   Created: 2022/10/12 13:50:34 by mthiesso          #+#    #+#             */
+/*   Updated: 2022/10/12 18:33:24 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "philo.h"
 
-void	ft_bzero(void *s, size_t n)
+int	main(void)
 {
-	size_t			i;
-	unsigned char	*dest;
+	// struct timeval	current_time;
 
-	i = 0;
-	dest = s;
-	while (i < n)
-	{
-		*dest = 0;
-		i++;
-		dest++;
-	}
+	// gettimeofday(&current_time, NULL);
+	// printf("seconds : %ld\nmicro seconds : %d\n", current_time.tv_sec, current_time.tv_usec);
+	// usleep(50);
+	// gettimeofday(&current_time, NULL);
+	// printf("seconds : %ld\nmicro seconds : %d\n", current_time.tv_sec, current_time.tv_usec);
+	now_time();
+	return (0);
 }

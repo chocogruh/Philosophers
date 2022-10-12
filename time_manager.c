@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   time_manager.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 17:30:14 by mthiesso          #+#    #+#             */
-/*   Updated: 2021/11/16 17:46:39 by mthiesso         ###   ########.fr       */
+/*   Created: 2022/10/12 17:42:27 by mthiesso          #+#    #+#             */
+/*   Updated: 2022/10/12 18:35:08 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "philo.h"
 
-int	ft_lstsize(t_list *lst)
+int	ft_start(void)
 {
-	int	i;
+	//struct timeval	current_time;
+	t_time			*time;
 
-	i = 0;
-	while (lst)
-	{
-		i++;
-		lst = lst->next;
-	}
-	return (i);
+	time = NULL;
+	return (0);
+}
+
+int	now_time(void)
+{
+	struct timeval	current_time;
+	long int		current_time_ms;
+
+	gettimeofday(&current_time, NULL);
+	current_time_ms = current_time.tv_sec * 1000;
+	printf("start time : %ld\n", current_time_ms);
+	usleep(100);
+	printf("end time : %ld\n", current_time_ms);
+	return (0);
 }

@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 12:36:50 by mthiesso          #+#    #+#             */
-/*   Updated: 2021/11/11 12:53:00 by mthiesso         ###   ########.fr       */
+/*   Created: 2022/10/10 11:17:47 by mthiesso          #+#    #+#             */
+/*   Updated: 2022/10/12 18:33:35 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef PHILO_H
+# define PHILO_H
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+# include <sys/time.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include <pthread.h>
+
+# define EAT "is eating"
+# define SLEEP "is sleeping"
+# define THINK "is thinking"
+# define DEAD "is dead"
+
+typedef struct s_time
 {
-	unsigned int		i;
+	size_t	now_time;
+	size_t	start_time;
+}	t_time;
 
-	i = 0;
-	if (!s)
-		return ;
-	while (s[i])
-	{
-		f(i, &s[i]);
-		i++;
-	}
-	return ;
-}
+//time_manager.c
+int	ft_start(void);
+int	now_time(void);
+
+#endif
