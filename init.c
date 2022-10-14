@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 13:50:34 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/10/14 21:16:25 by mthiesso         ###   ########.fr       */
+/*   Created: 2022/10/14 20:34:01 by mthiesso          #+#    #+#             */
+/*   Updated: 2022/10/14 20:39:39 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-int	main(int argc, char **argv)
+void	args_init(t_data *dt, int nb_args, char **args)
 {
-	t_data	dt;
-
-	if (check_errors(argc, argv) == EXIT_FAILURE)
-		return (EXIT_FAILURE);
-	args_init(&dt, argc, argv);
-	ft_start(&dt);
-	sleep(1);
-	time_diff(&dt);
-	return (0);
+	dt->nb_philo = ft_atol(args[1]);
+	dt->ttd = ft_atol(args[2]);
+	dt->tte = ft_atol(args[3]);
+	dt->tts = ft_atol(args[4]);
+	if (nb_args == 6)
+		dt->nbe = ft_atol(args[5]);
 }

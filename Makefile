@@ -6,7 +6,7 @@
 #    By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 11:10:46 by mthiesso          #+#    #+#              #
-#    Updated: 2022/10/12 18:17:09 by mthiesso         ###   ########.fr        #
+#    Updated: 2022/10/14 20:34:20 by mthiesso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,12 @@ NAME =	philosophers
 AR =	ar rcs
 SRC =	main.c \
 		time_manager.c \
+		errors.c \
+		utils.c \
+		init.c \
 
 OBJ =	${SRC:.c=.o}
+DEL = 	rm -rf
 
 all:	${NAME}
 

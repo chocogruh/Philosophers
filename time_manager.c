@@ -6,30 +6,34 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 17:42:27 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/10/12 18:35:08 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/10/14 21:15:49 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-int	ft_start(void)
+int	ft_start(t_data *dt)
 {
-	//struct timeval	current_time;
-	t_time			*time;
-
-	time = NULL;
+	dt->time = malloc(sizeof(t_time));
+	dt->time->start_time = get_now_time();
 	return (0);
 }
 
-int	now_time(void)
+long int	get_now_time(void)
 {
 	struct timeval	current_time;
 	long int		current_time_ms;
 
 	gettimeofday(&current_time, NULL);
 	current_time_ms = current_time.tv_sec * 1000;
-	printf("start time : %ld\n", current_time_ms);
-	usleep(100);
-	printf("end time : %ld\n", current_time_ms);
-	return (0);
+	return (current_time_ms);
+}
+
+int	time_diff(t_data *dt)
+{
+	int	now_time;
+
+	now_time = get_now_time() - dt->time->start_time;
+	printf("now_time : %d\n", now_time);
+	return (now_time);
 }

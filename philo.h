@@ -6,7 +6,7 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 11:17:47 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/10/12 18:33:35 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/10/14 21:15:35 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <pthread.h>
+# include <limits.h>
 
 # define EAT "is eating"
 # define SLEEP "is sleeping"
@@ -26,12 +27,33 @@
 
 typedef struct s_time
 {
-	size_t	now_time;
-	size_t	start_time;
+	long int	start_time;
 }	t_time;
 
+typedef struct s_data
+{
+	int		nb_philo;
+	int		ttd;
+	int		tte;
+	int		tts;
+	int		nbe;
+	t_time	*time;
+}	t_data;
+
+// error.c
+int		check_errors(int nb_arg, char **args);
+int		are_you_int(int nb_args, char **args);
+
+//init.c
+void	args_init(t_data *dt, int nb_args, char **args);
+
 //time_manager.c
-int	ft_start(void);
-int	now_time(void);
+int		ft_start(t_data *dt);
+long	get_now_time(void);
+
+//utils.c
+long	ft_atol(const char *str);
+int		ft_isdigit(int c);
+int		time_diff(t_data *dt);
 
 #endif
