@@ -6,11 +6,11 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 15:31:54 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/10/14 20:59:02 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/10/14 21:26:33 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../inc/philo.h"
 
 int	check_errors(int nb_arg, char **args)
 {

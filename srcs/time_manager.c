@@ -6,11 +6,11 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 17:42:27 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/10/14 21:15:49 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/10/14 21:26:33 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../inc/philo.h"
 
 int	ft_start(t_data *dt)
 {

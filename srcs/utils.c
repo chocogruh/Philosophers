@@ -6,11 +6,11 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 16:00:32 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/10/13 16:19:51 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/10/14 21:26:40 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../inc/philo.h"
 
 long	ft_atol(const char *str)
 {

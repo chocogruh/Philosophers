@@ -6,7 +6,7 @@
 #    By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 11:10:46 by mthiesso          #+#    #+#              #
-#    Updated: 2022/10/14 20:34:20 by mthiesso         ###   ########.fr        #
+#    Updated: 2022/10/14 21:23:56 by mthiesso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,11 +19,11 @@ CC =	gcc
 CFLAGS =	-Wall -Wextra -Werror -g #-fsanitize=address
 NAME =	philosophers
 AR =	ar rcs
-SRC =	main.c \
-		time_manager.c \
-		errors.c \
-		utils.c \
-		init.c \
+SRC =	srcs/main.c \
+		srcs/time_manager.c \
+		srcs/errors.c \
+		srcs/utils.c \
+		srcs/init.c \
 
 OBJ =	${SRC:.c=.o}
 DEL = 	rm -rf
