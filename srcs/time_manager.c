@@ -6,7 +6,7 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 17:42:27 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/10/14 21:26:33 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/10/16 19:16:41 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,20 @@ int	ft_start(t_data *dt)
 	return (0);
 }
 
-long int	get_now_time(void)
+size_t	get_now_time(void)
 {
 	struct timeval	current_time;
-	long int		current_time_ms;
+	size_t			current_time_ms;
 
 	gettimeofday(&current_time, NULL);
-	current_time_ms = current_time.tv_sec * 1000;
+	current_time_ms = (current_time.tv_sec * 1000) + (current_time.tv_usec / 1000);
 	return (current_time_ms);
 }
 
-int	time_diff(t_data *dt)
+size_t	time_diff(t_data *dt)
 {
-	int	now_time;
+	size_t	now_time;
 
 	now_time = get_now_time() - dt->time->start_time;
-	printf("now_time : %d\n", now_time);
 	return (now_time);
 }

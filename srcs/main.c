@@ -6,7 +6,7 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 13:50:34 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/10/14 21:26:33 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/10/16 19:57:27 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,20 @@
 int	main(int argc, char **argv)
 {
 	t_data	dt;
+	int		i;
 
+	i = 0;
 	if (check_errors(argc, argv) == EXIT_FAILURE)
 		return (EXIT_FAILURE);
-	args_init(&dt, argc, argv);
+	if (init_all(&dt, argc, argv) == EXIT_FAILURE)
+		return (EXIT_FAILURE);
 	ft_start(&dt);
-	sleep(1);
-	time_diff(&dt);
+	while (i < dt.n_philo)
+	{
+		pthread_create(&dt.pid[i], NULL, philo_birth, &dt);
+		usleep(1000);
+		i++;
+	}
+	sleep(3);
 	return (0);
 }
