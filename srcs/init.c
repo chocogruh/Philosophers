@@ -6,7 +6,7 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 20:34:01 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/10/16 18:47:15 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/10/20 18:00:01 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,19 @@ int	args_init(t_data *dt, int nb_args, char **args)
 		dt->nb_meal = -1;
 	dt->pid = malloc(sizeof(pthread_t) * dt->n_philo);
 	dt->philo = malloc(sizeof(t_philo) * dt->n_philo);
+	dt->zombie = 0;
 	return (EXIT_SUCCESS);
 }
 
 void	mutex_init(t_data *dt)
 {
+	int	i;
+
+	i = 0;
 	pthread_mutex_init(&dt->lock, NULL);
+	dt->fork = malloc(sizeof(pthread_mutex_t) * dt->n_philo);
+	while (i < dt->n_philo)
+		pthread_mutex_init(&dt->fork[i++], NULL);
 }
 
 int	init_all(t_data *dt, int nb_args, char **args)
@@ -42,5 +49,19 @@ int	init_all(t_data *dt, int nb_args, char **args)
 	if (args_init(dt, nb_args, args) == EXIT_FAILURE)
 		return (EXIT_FAILURE);
 	mutex_init(dt);
+	init_philo(dt);
 	return (EXIT_SUCCESS);
+}
+
+void	init_philo(t_data *dt)
+{
+	int	i;
+
+	i = 0;
+	while (i < dt->n_philo)
+	{
+		dt->philo[i].neighbour = (i + 1) % dt->n_philo;
+		dt->philo[i].last_meal = 0;
+		i++;
+	}
 }

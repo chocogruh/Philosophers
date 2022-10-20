@@ -6,7 +6,7 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 13:50:34 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/10/16 19:57:27 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/10/20 18:47:26 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 int	main(int argc, char **argv)
 {
-	t_data	dt;
-	int		i;
+	t_data		dt;
+	pthread_t	dip;
+	int			i;
 
 	i = 0;
 	if (check_errors(argc, argv) == EXIT_FAILURE)
@@ -23,12 +24,12 @@ int	main(int argc, char **argv)
 	if (init_all(&dt, argc, argv) == EXIT_FAILURE)
 		return (EXIT_FAILURE);
 	ft_start(&dt);
+	pthread_create(&dip, NULL, is_there_life, &dt);
 	while (i < dt.n_philo)
 	{
 		pthread_create(&dt.pid[i], NULL, philo_birth, &dt);
-		usleep(1000);
 		i++;
 	}
-	sleep(3);
-	return (0);
+	ending_life(&dt, dip);
+	return (EXIT_SUCCESS);
 }
