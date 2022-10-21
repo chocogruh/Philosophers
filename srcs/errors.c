@@ -6,7 +6,7 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 15:31:54 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/10/16 14:56:31 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/10/21 18:02:15 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ int	check_errors(int nb_arg, char **args)
 	(void) args;
 	if (nb_arg < 5 || nb_arg > 6)
 	{
-		printf("Error : wrong number of argument\n");
+		printf("%sError : wrong number of argument\n", RED);
 		return (EXIT_FAILURE);
 	}
 	if (are_you_int(nb_arg, args) == EXIT_FAILURE)
 	{
-		printf("Error : argument must be positive digit only\n");
+		printf("%sError : argument must be positive digit only\n", RED);
 		return (EXIT_FAILURE);
 	}
 	return (EXIT_SUCCESS);

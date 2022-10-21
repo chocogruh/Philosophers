@@ -6,7 +6,7 @@
 #    By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 11:10:46 by mthiesso          #+#    #+#              #
-#    Updated: 2022/10/20 18:16:06 by mthiesso         ###   ########.fr        #
+#    Updated: 2022/10/21 16:28:07 by mthiesso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ BPRP = \033[135m
 
 CC =	gcc
 CFLAGS =	-Wall -Wextra -Werror -g -fsanitize=address
-NAME =	philosophers
+NAME =	philo
 AR =	ar rcs
 SRC =	srcs/main.c \
 		srcs/time_manager.c \
@@ -28,7 +28,7 @@ SRC =	srcs/main.c \
 		srcs/utils.c \
 		srcs/init.c \
 		srcs/philosophers.c \
-		srcs/death.c \
+		srcs/checker.c \
 
 OBJ =	${SRC:.c=.o}
 DEL = 	rm -rf

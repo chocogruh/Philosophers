@@ -6,7 +6,7 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 17:42:27 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/10/20 19:07:14 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/10/21 15:50:42 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,18 @@ size_t	time_diff(t_data *dt)
 
 int	diy_usleep(t_data *dt, t_philo *olihp, int time_to)
 {
-	int	i;
+	int	begin;
+	int	end;
 
 	(void) olihp;
-	i = 0;
-	while (i <= time_to)
+	begin = time_diff(dt);
+	end = time_diff(dt);
+	while ((end - begin) < time_to)
 	{
+		end = time_diff(dt);
 		if (dt->zombie == 1)
 			return (EXIT_FAILURE);
-		usleep(1000);
-		i++;
+		usleep(100);
 	}
 	return (EXIT_SUCCESS);
 }

@@ -6,7 +6,7 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 11:17:47 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/10/20 19:04:55 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/10/21 17:40:13 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,16 @@
 # include <pthread.h>
 # include <limits.h>
 
+# define PURP "\e[35m"
+# define GREEN "\e[32m"
+# define RED "\e[31m"
+# define WHITE "\e[39m"
+# define YELLOW "\033[33m"
+# define ORANGE "$(shell tput setaf 208)"
+# define RESET "\e[0"
+# define BLUE "\033[34m"
+# define CYAN "\033[36m"
+
 # define BORN "is born"
 # define EAT "is eating"
 # define SLEEP "is sleeping"
@@ -31,6 +41,7 @@ typedef struct s_philo
 {
 	int	n;
 	int	last_meal;
+	int	n_meal;
 	int	neighbour;
 }	t_philo;
 
@@ -79,10 +90,11 @@ int		ft_isdigit(int c);
 void	*philo_birth(void *data_t);
 int		philo_sleep(t_data *dt, t_philo *olihp);
 int		philo_eat(t_data *dt, t_philo *olihp);
-void	take_fork(t_data *dt, t_philo *olihp);
+int		take_fork(t_data *dt, t_philo *olihp);
 
-//death.c
+//checker.c
 void	*is_there_life(void	*data_t);
 void	ending_life(t_data *dt, pthread_t dip);
+int		check_meal(t_data *dt);
 
 #endif

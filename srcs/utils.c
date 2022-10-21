@@ -6,7 +6,7 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 16:00:32 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/10/14 21:26:40 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/10/21 17:54:21 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ long	ft_atol(const char *str)
 	if (((res * sign) > INT_MAX) || ((res * sign) < INT_MIN))
 	{
 		printf("Error !\n");
-		exit (0);
+		return (0);
 	}
 	return (sign * res);
 }
