@@ -6,7 +6,7 @@
 #    By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 11:10:46 by mthiesso          #+#    #+#              #
-#    Updated: 2022/10/21 16:28:07 by mthiesso         ###   ########.fr        #
+#    Updated: 2022/10/21 18:42:43 by mthiesso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ RED = \033[91m
 BPRP = \033[135m
 
 CC =	gcc
-CFLAGS =	-Wall -Wextra -Werror -g -fsanitize=address
+CFLAGS =	-Wall -Wextra -Werror -g #-fsanitize=address
 NAME =	philo
 AR =	ar rcs
 SRC =	srcs/main.c \

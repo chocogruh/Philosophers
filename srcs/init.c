@@ -6,7 +6,7 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 20:34:01 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/10/21 17:48:53 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/10/21 18:46:11 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	args_init(t_data *dt, int nb_args, char **args)
 	dt->n_philo = ft_atol(args[1]);
 	if (dt->n_philo == 0)
 	{
-		printf("Error : no philo around the table\n");
+		printf("%sError : no philo around the table\n", RED);
 		return (EXIT_FAILURE);
 	}
 	dt->ttd = ft_atol(args[2]);

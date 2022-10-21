@@ -6,7 +6,7 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 11:17:47 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/10/21 17:40:13 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/10/21 21:03:30 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,7 @@
 # define PURP "\e[35m"
 # define GREEN "\e[32m"
 # define RED "\e[31m"
-# define WHITE "\e[39m"
 # define YELLOW "\033[33m"
-# define ORANGE "$(shell tput setaf 208)"
-# define RESET "\e[0"
 # define BLUE "\033[34m"
 # define CYAN "\033[36m"
 
@@ -96,5 +93,6 @@ int		take_fork(t_data *dt, t_philo *olihp);
 void	*is_there_life(void	*data_t);
 void	ending_life(t_data *dt, pthread_t dip);
 int		check_meal(t_data *dt);
+void	free_all(t_data *dt);
 
 #endif

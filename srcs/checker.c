@@ -6,7 +6,7 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 17:41:21 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/10/21 18:03:39 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/10/21 21:02:11 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void	ending_life(t_data *dt, pthread_t dip)
 		i++;
 	}
 	pthread_join(dip, NULL);
+	free_all(dt);
 }
 
 int	check_meal(t_data *dt)
@@ -72,4 +73,13 @@ int	check_meal(t_data *dt)
 		i++;
 	}
 	return (EXIT_SUCCESS);
+}
+
+void	free_all(t_data *dt)
+{
+	free(dt->fork);
+	free(dt->pid);
+	free(dt->philo);
+	free(dt->time);
+	return ;
 }
